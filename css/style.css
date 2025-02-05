@@ -1,0 +1,228 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #3498db;
+  --success-color: #2ecc71;
+  --warning-color: #f1c40f;
+  --error-color: #e74c3c;
+  --text-color: #333;
+  --bg-color: #f5f6fa;
+  --sidebar-width: 300px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+aside {
+  width: var(--sidebar-width);
+  background: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.logo h1 {
+  font-size: 1.2rem;
+}
+
+nav {
+  margin-bottom: 2rem;
+}
+
+.nav-item {
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  transition: background 0.3s;
+}
+
+.nav-item:hover {
+  background: var(--secondary-color);
+}
+
+.nav-item.active {
+  background: var(--accent-color);
+}
+
+main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: 2rem;
+}
+
+.section {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: var(--accent-color);
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.edit-btn, .save-btn, .delete-btn, .add-section-btn {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.delete-btn {
+  background: var(--error-color);
+}
+
+.add-section-btn {
+  width: 100%;
+  margin-top: 1rem;
+  background: var(--success-color);
+}
+
+pre code {
+  border-radius: 4px;
+  padding: 1rem !important;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.progress-container {
+  background: var(--secondary-color);
+  border-radius: 4px;
+  height: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  background: var(--accent-color);
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+#progressText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.8rem;
+}
+
+.completed {
+  color: var(--success-color);
+}
+
+.warning {
+  color: var(--warning-color);
+}
+
+.error {
+  color: var(--error-color);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  margin: 2rem auto;
+  position: relative;
+}
+
+.modal input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.editing .section {
+  border: 2px dashed var(--accent-color);
+}
+
+.tox-tinymce {
+  margin: 1rem 0;
+}
+
+.ck-editor__editable {
+  min-height: 300px;
+  max-height: 600px;
+}
+
+.ck.ck-editor {
+  margin: 1rem 0;
+}
+
+.modal .ck-editor__editable {
+  min-height: 400px;
+}

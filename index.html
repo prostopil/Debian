@@ -1,0 +1,55 @@
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Инструкция по установке и настройке сервера Debian</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside id="sidebar">
+      <div class="logo">
+        <svg width="50" height="50" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+          <text x="50" y="65" text-anchor="middle" font-size="40">🛠</text>
+        </svg>
+        <h1>Debian Server Setup</h1>
+      </div>
+      <nav id="navigation"></nav>
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+        <span id="progressText">0%</span>
+      </div>
+      <button id="addSectionBtn" class="add-section-btn">Добавить раздел</button>
+    </aside>
+
+    <main>
+      <div id="content"></div>
+      <div class="controls">
+        <button id="prevBtn">Назад</button>
+        <button id="nextBtn">Далее</button>
+        <button id="editBtn" class="edit-btn">Редактировать</button>
+        <button id="saveBtn" class="save-btn" style="display: none;">Сохранить</button>
+        <button id="deleteBtn" class="delete-btn">Удалить раздел</button>
+      </div>
+    </main>
+  </div>
+
+  <div id="addSectionModal" class="modal">
+    <div class="modal-content">
+      <h2>Новый раздел</h2>
+      <input type="text" id="newSectionTitle" placeholder="Название раздела">
+      <div id="newSectionContent"></div>
+      <div class="modal-buttons">
+        <button id="saveSectionBtn">Сохранить</button>
+        <button id="cancelSectionBtn">Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
